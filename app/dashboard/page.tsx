@@ -115,10 +115,10 @@ export default async function DashboardPage() {
       {/* Add business */}
       <Link
         href="/api/businesses/connect"
-        className="mt-6 inline-flex items-center gap-2 bg-accent text-bg-primary hover:bg-accent-hover rounded-lg px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        className="mt-6 inline-flex items-center gap-2 bg-accent text-surface hover:bg-accent-hover rounded-lg px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         + Connect another business
-        <span className="opacity-60">→</span>
+        <span className="text-surface/60">→</span>
       </Link>
     </div>
   );
@@ -186,14 +186,14 @@ function EmptyState() {
       <div className="flex flex-col gap-3">
         <Link
           href="/api/businesses/connect"
-          className="inline-flex items-center justify-center gap-2 bg-accent text-bg-primary hover:bg-accent-hover rounded-lg px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="inline-flex items-center justify-center gap-2 bg-accent text-surface hover:bg-accent-hover rounded-lg px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           style={{ minHeight: "44px" }}
         >
           Connect Google Business Profile
-          <span className="opacity-60">→</span>
+          <span className="text-surface/60">→</span>
         </Link>
 
-        <div className="pt-4 border-t border-border">
+        <div className="pt-4 border-t border-border-subtle">
           <p className="text-xs text-content-tertiary mb-2">
             Don&apos;t have a Business Profile yet? Test with mock data.
           </p>

@@ -4,9 +4,9 @@ export default function SignInPage() {
   return (
     <main className="min-h-screen flex flex-col lg:grid lg:grid-cols-2">
       {/* Left — Brand */}
-      <div className="hidden lg:flex flex-col justify-between bg-accent text-bg-primary p-12">
+      <div className="hidden lg:flex flex-col justify-between bg-accent text-surface p-12">
         <div>
-          <p className="text-sm font-medium tracking-wider uppercase opacity-60">
+          <p className="text-sm font-medium tracking-wider uppercase text-surface/60">
             Review Reply Copilot
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function SignInPage() {
           >
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-3 bg-accent text-bg-primary hover:bg-accent-hover rounded-lg py-3 px-4 text-base font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="w-full flex items-center justify-center gap-3 bg-accent text-surface hover:bg-accent-hover rounded-lg py-3 px-4 text-base font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               <GoogleIcon />
               Continue with Google

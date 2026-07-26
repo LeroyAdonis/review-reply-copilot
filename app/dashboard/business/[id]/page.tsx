@@ -108,7 +108,7 @@ export default async function BusinessSettingsPage({
 
           <button
             type="submit"
-            className="inline-flex items-center justify-center h-11 px-6 rounded-lg bg-accent text-bg-primary text-sm font-medium hover:bg-accent-hover active:scale-[0.98] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center h-11 px-6 rounded-lg bg-accent text-surface text-sm font-medium hover:bg-accent-hover active:scale-[0.98] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ minWidth: "120px" }}
           >
             Save settings
@@ -116,7 +116,7 @@ export default async function BusinessSettingsPage({
         </form>
 
         {/* Danger zone */}
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 border-t border-border-subtle">
           <h2 className="text-sm font-semibold text-content mb-2">
             Danger zone
           </h2>

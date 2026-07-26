@@ -17,7 +17,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/auth/sign-in"
-              className="inline-flex items-center justify-center bg-accent text-bg-primary hover:bg-accent-hover rounded-lg px-6 py-3 text-base font-medium transition-colors"
+              className="inline-flex items-center justify-center bg-accent text-surface hover:bg-accent-hover rounded-lg px-6 py-3 text-base font-medium transition-colors"
             >
               Get Started Free
             </Link>
@@ -34,7 +34,7 @@ export default function LandingPage() {
       {/* How it works — numbered steps, not icon cards */}
       <section
         id="how-it-works"
-        className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border"
+        className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border-subtle"
       >
         <h2 className="text-2xl font-semibold mb-12">How it works</h2>
 
@@ -55,7 +55,7 @@ export default function LandingPage() {
       </section>
 
       {/* Proof — quiet, not boastful */}
-      <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border">
+      <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border-subtle">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-content-tertiary uppercase tracking-wider mb-4">
             What business owners say
@@ -72,7 +72,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing — clear comparison, no decoration */}
-      <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border">
+      <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border-subtle">
         <h2 className="text-2xl font-semibold mb-2">Simple pricing</h2>
         <p className="text-content-secondary mb-10">All prices in Rands. No hidden fees.</p>
 
@@ -170,18 +170,18 @@ function PricingCard({
     <div
       className={`rounded-xl p-6 ${
         popular
-          ? "bg-accent text-bg-primary ring-1 ring-accent"
-          : "bg-surface-secondary border border-border"
+          ? "bg-accent text-surface ring-1 ring-accent"
+          : "bg-surface-secondary border border-border-subtle"
       }`}
     >
       <h3 className="text-lg font-semibold mb-1">{name}</h3>
-      <p className={`text-3xl font-bold mb-1 ${popular ? "text-bg-primary" : "text-content"}`}>
+      <p className={`text-3xl font-bold mb-1 ${popular ? "text-surface" : "text-content"}`}>
         {price}
-        <span className={`text-sm font-normal ${popular ? "opacity-60" : "text-content-tertiary"}`}>
+        <span className={`text-sm font-normal ${popular ? "text-surface/60" : "text-content-tertiary"}`}>
           /mo
         </span>
       </p>
-      <ul className={`mt-4 space-y-2 mb-6 text-sm ${popular ? "opacity-80" : "text-content-secondary"}`}>
+      <ul className={`mt-4 space-y-2 mb-6 text-sm ${popular ? "text-surface/80" : "text-content-secondary"}`}>
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2">
             <span className="mt-0.5 shrink-0">•</span>
@@ -194,7 +194,7 @@ function PricingCard({
         className={`block text-center py-2.5 rounded-lg text-sm font-medium transition-colors ${
           popular
             ? "bg-surface text-accent hover:bg-surface-tertiary"
-            : "bg-accent text-bg-primary hover:bg-accent-hover"
+            : "bg-accent text-surface hover:bg-accent-hover"
         }`}
       >
         {cta}
