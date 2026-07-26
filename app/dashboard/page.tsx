@@ -1,60 +1,87 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { businesses, reviews, responses } from "@/lib/db/schema";
-import { eq, sql, and } from "drizzle-orm";
+import { businesses } from "@/lib/db/schema";
+import { eq } from "drizzle-orm";
 import Link from "next/link";
 
 export default async function DashboardPage() {
   const session = await auth();
   if (!session?.user?.id) return null;
 
-  const userBusinesses = await db.select().from(businesses).where(eq(businesses.userId, session.user.id));
+  const userBusinesses = await db
+    .select()
+    .from(businesses)
+    .where(eq(businesses.userId, session.user.id));
 
   if (userBusinesses.length === 0) {
     return (
-      <div>
-        <h1 className="text-2xl font-bold mb-2">Welcome 👋</h1>
-        <p className="text-gray-500 mb-6">Connect your Google Business Profile to get started.</p>
-        <Link
-          href="/api/businesses/connect"
-          className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800"
-        >
-          Connect Google Business Profile
-        </Link>
-      </div>
+      <EmptyState />
     );
   }
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h1 className="text-2xl font-semibold">Reviews</h1>
+          <p className="text-sm text-text-secondary mt-1">
+            {userBusinesses.length} {userBusinesses.length === 1 ? "business" : "businesses"} connected
+          </p>
+        </div>
         <Link
           href="/api/businesses/connect"
-          className="text-sm bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200"
+          className="inline-flex items-center gap-2 bg-accent text-bg-primary hover:bg-accent-hover rounded-lg px-4 py-2 text-sm font-medium transition-colors"
         >
-          + Add Business
+          + Connect another
         </Link>
       </div>
 
-      <div className="grid gap-4">
+      <div className="space-y-3">
         {userBusinesses.map((biz) => (
-          <div key={biz.id} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <div className="flex items-center justify-between mb-3">
+          <Link
+            key={biz.id}
+            href={`/dashboard/business/${biz.id}`}
+            className="block bg-bg-secondary border border-border hover:border-border-hover rounded-xl px-6 py-5 transition-colors"
+          >
+            <div className="flex items-center justify-between">
               <div>
-                <h2 className="font-semibold text-lg">{biz.businessName}</h2>
-                <p className="text-sm text-gray-500 capitalize">{biz.businessType} · {biz.tone.replace("_", " ")}</p>
+                <h2 className="font-semibold">{biz.businessName}</h2>
+                <p className="text-sm text-text-secondary mt-0.5 capitalize">
+                  {biz.businessType} · {biz.tone.replace(/_/g, " ")}
+                </p>
               </div>
-              <span className={`w-2 h-2 rounded-full ${biz.isActive ? "bg-green-500" : "bg-gray-300"}`} />
+              <div className="flex items-center gap-3">
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    biz.isActive ? "bg-success" : "bg-text-tertiary"
+                  }`}
+                />
+                <span className="text-text-tertiary text-sm">→</span>
+              </div>
             </div>
-            <div className="flex gap-4 text-sm">
-              <Link href={`/dashboard/business/${biz.id}`} className="text-blue-600 hover:underline">
-                View Reviews →
-              </Link>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
+    </div>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="max-w-md py-12">
+      <h1 className="text-2xl font-semibold mb-3">Connect your Google Business Profile</h1>
+      <p className="text-text-secondary leading-relaxed mb-8">
+        Link your business to start auto-replying to reviews in your own voice.
+        Positive reviews get answered automatically. Negative ones come to
+        your inbox for a quick approval.
+      </p>
+      <Link
+        href="/api/businesses/connect"
+        className="inline-flex items-center gap-2 bg-accent text-bg-primary hover:bg-accent-hover rounded-lg px-5 py-3 text-sm font-medium transition-colors"
+      >
+        Connect Google Business Profile
+        <span className="opacity-60">→</span>
+      </Link>
     </div>
   );
 }
