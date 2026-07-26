@@ -9,7 +9,7 @@ export default function LandingPage() {
           <h1 className="text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-6">
             Auto-reply to your Google reviews in your own South African voice.
           </h1>
-          <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-lg">
+          <p className="text-lg text-content-secondary leading-relaxed mb-8 max-w-lg">
             Connect your Google Business Profile once. We handle every positive
             review automatically. Negative reviews get a draft you approve with
             one click.
@@ -23,7 +23,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="#how-it-works"
-              className="inline-flex items-center justify-center border border-border hover:border-border-hover rounded-lg px-6 py-3 text-base font-medium text-text-primary transition-colors"
+              className="inline-flex items-center justify-center border border-border-subtle hover:border-border-hover rounded-lg px-6 py-3 text-base font-medium text-content transition-colors"
             >
               How it works
             </Link>
@@ -57,15 +57,15 @@ export default function LandingPage() {
       {/* Proof — quiet, not boastful */}
       <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium text-text-tertiary uppercase tracking-wider mb-4">
+          <p className="text-sm font-medium text-content-tertiary uppercase tracking-wider mb-4">
             What business owners say
           </p>
-          <blockquote className="text-xl text-text-secondary leading-relaxed">
+          <blockquote className="text-xl text-content-secondary leading-relaxed">
             &ldquo;I used to spend 20 minutes every morning replying to
             reviews. Now I don&apos;t think about it. The responses actually
             sound like me.&rdquo;
           </blockquote>
-          <p className="mt-4 text-sm text-text-tertiary">
+          <p className="mt-4 text-sm text-content-tertiary">
             — Sarah, salon owner, Sandton
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function LandingPage() {
       {/* Pricing — clear comparison, no decoration */}
       <section className="max-w-5xl mx-auto px-6 py-16 lg:py-24 border-t border-border">
         <h2 className="text-2xl font-semibold mb-2">Simple pricing</h2>
-        <p className="text-text-secondary mb-10">All prices in Rands. No hidden fees.</p>
+        <p className="text-content-secondary mb-10">All prices in Rands. No hidden fees.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <PricingCard
@@ -115,16 +115,16 @@ export default function LandingPage() {
       </section>
 
       {/* Footer — minimal */}
-      <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-border flex flex-col sm:flex-row justify-between gap-4 text-sm text-text-tertiary">
+      <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-border-subtle flex flex-col sm:flex-row justify-between gap-4 text-sm text-content-tertiary">
         <span>Review Reply Copilot</span>
         <div className="flex gap-6">
-          <Link href="/auth/sign-in" className="hover:text-text-secondary transition-colors">
+          <Link href="/auth/sign-in" className="hover:text-content-secondary transition-colors">
             Sign in
           </Link>
-          <a href="#" className="hover:text-text-secondary transition-colors">
+          <a href="#" className="hover:text-content-secondary transition-colors">
             Privacy
           </a>
-          <a href="#" className="hover:text-text-secondary transition-colors">
+          <a href="#" className="hover:text-content-secondary transition-colors">
             Terms
           </a>
         </div>
@@ -144,11 +144,11 @@ function Step({
 }) {
   return (
     <div>
-      <span className="inline-block text-sm font-medium text-text-tertiary mb-3">
+      <span className="inline-block text-sm font-medium text-content-tertiary mb-3">
         {String(number).padStart(2, "0")}
       </span>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-text-secondary leading-relaxed">{children}</p>
+      <p className="text-content-secondary leading-relaxed">{children}</p>
     </div>
   );
 }
@@ -171,17 +171,17 @@ function PricingCard({
       className={`rounded-xl p-6 ${
         popular
           ? "bg-accent text-bg-primary ring-1 ring-accent"
-          : "bg-bg-secondary border border-border"
+          : "bg-surface-secondary border border-border"
       }`}
     >
       <h3 className="text-lg font-semibold mb-1">{name}</h3>
-      <p className={`text-3xl font-bold mb-1 ${popular ? "text-bg-primary" : "text-text-primary"}`}>
+      <p className={`text-3xl font-bold mb-1 ${popular ? "text-bg-primary" : "text-content"}`}>
         {price}
-        <span className={`text-sm font-normal ${popular ? "opacity-60" : "text-text-tertiary"}`}>
+        <span className={`text-sm font-normal ${popular ? "opacity-60" : "text-content-tertiary"}`}>
           /mo
         </span>
       </p>
-      <ul className={`mt-4 space-y-2 mb-6 text-sm ${popular ? "opacity-80" : "text-text-secondary"}`}>
+      <ul className={`mt-4 space-y-2 mb-6 text-sm ${popular ? "opacity-80" : "text-content-secondary"}`}>
         {features.map((f) => (
           <li key={f} className="flex items-start gap-2">
             <span className="mt-0.5 shrink-0">•</span>
@@ -193,7 +193,7 @@ function PricingCard({
         href="/auth/sign-in"
         className={`block text-center py-2.5 rounded-lg text-sm font-medium transition-colors ${
           popular
-            ? "bg-bg-primary text-accent hover:bg-bg-tertiary"
+            ? "bg-surface text-accent hover:bg-surface-tertiary"
             : "bg-accent text-bg-primary hover:bg-accent-hover"
         }`}
       >

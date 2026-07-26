@@ -28,16 +28,16 @@ export default async function BusinessSettingsPage({
     <div>
       <Link
         href="/dashboard"
-        className="text-sm text-text-secondary hover:text-text-primary transition-colors mb-6 inline-block"
+        className="text-sm text-content-secondary hover:text-content transition-colors mb-6 inline-block"
       >
         ← Back to dashboard
       </Link>
 
       <div className="max-w-lg">
-        <h1 className="text-2xl font-semibold text-text-primary mb-1">
+        <h1 className="text-2xl font-semibold text-content mb-1">
           {business.businessName}
         </h1>
-        <p className="text-sm text-text-secondary mb-8">
+        <p className="text-sm text-content-secondary mb-8">
           Configure your auto-reply tone and settings.
         </p>
 
@@ -64,7 +64,7 @@ export default async function BusinessSettingsPage({
           <div className="mb-5">
             <label
               htmlFor="businessType"
-              className="block text-sm font-medium text-text-primary mb-1.5"
+              className="block text-sm font-medium text-content mb-1.5"
             >
               Business type
             </label>
@@ -72,7 +72,7 @@ export default async function BusinessSettingsPage({
               id="businessType"
               name="businessType"
               defaultValue={business.businessType}
-              className="w-full h-11 px-3 rounded-lg border border-border bg-bg-secondary text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-1 transition-shadow"
+              className="w-full h-11 px-3 rounded-lg border border-border-subtle bg-surface-secondary text-content text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-1 transition-shadow"
             >
               <option value="salon">Salon</option>
               <option value="clinic">Clinic</option>
@@ -87,7 +87,7 @@ export default async function BusinessSettingsPage({
           <div className="mb-8">
             <label
               htmlFor="tone"
-              className="block text-sm font-medium text-text-primary mb-1.5"
+              className="block text-sm font-medium text-content mb-1.5"
             >
               Reply tone
             </label>
@@ -95,13 +95,13 @@ export default async function BusinessSettingsPage({
               id="tone"
               name="tone"
               defaultValue={business.tone}
-              className="w-full h-11 px-3 rounded-lg border border-border bg-bg-secondary text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-1 transition-shadow"
+              className="w-full h-11 px-3 rounded-lg border border-border-subtle bg-surface-secondary text-content text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-1 transition-shadow"
             >
               <option value="warm_casual">Warm &amp; Casual — friendly, like a neighbour</option>
               <option value="professional">Professional — polished but personable</option>
               <option value="short_sweet">Short &amp; Sweet — brief and to the point</option>
             </select>
-            <p className="mt-1.5 text-xs text-text-tertiary">
+            <p className="mt-1.5 text-xs text-content-tertiary">
               This tone is used for all auto-generated review replies.
             </p>
           </div>
@@ -117,10 +117,10 @@ export default async function BusinessSettingsPage({
 
         {/* Danger zone */}
         <div className="mt-12 pt-8 border-t border-border">
-          <h2 className="text-sm font-semibold text-text-primary mb-2">
+          <h2 className="text-sm font-semibold text-content mb-2">
             Danger zone
           </h2>
-          <p className="text-xs text-text-secondary mb-4">
+          <p className="text-xs text-content-secondary mb-4">
             Disconnecting will stop all auto-replies for this business.
           </p>
           <form

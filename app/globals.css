@@ -4,21 +4,29 @@
   /* Color — one accent + restrained neutrals */
   --color-accent: #1a1a1a;
   --color-accent-hover: #333333;
-  --color-bg-primary: #fafaf9;
-  --color-bg-secondary: #ffffff;
-  --color-bg-tertiary: #f5f4f1;
-  --color-text-primary: #171717;
-  --color-text-secondary: #404040;
-  --color-text-tertiary: #9c9c9c;
-  --color-border: #e8e6e1;
+
+  /* Surfaces (backgrounds) */
+  --color-surface: #fafaf9;
+  --color-surface-secondary: #ffffff;
+  --color-surface-tertiary: #f5f4f1;
+
+  /* Content (text) */
+  --color-content: #171717;
+  --color-content-secondary: #404040;
+  --color-content-tertiary: #9c9c9c;
+
+  /* Borders */
+  --color-border-subtle: #e8e6e1;
   --color-border-hover: #d4d1cb;
+
+  /* Semantic */
   --color-success: #16a34a;
   --color-warning: #d97706;
   --color-error: #dc2626;
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-mono: ui-monospace, monospace;
 
   /* Radius */
   --radius-sm: 0.375rem;
@@ -26,28 +34,21 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 
-  /* Shadows — subtle, not decorative */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-:root {
-  --background: var(--color-bg-primary);
-  --foreground: var(--color-text-primary);
+  /* Shadows */
+  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-card: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 12px 40px rgba(0,0,0,0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0d0d0d;
-    --foreground: #ededed;
-    --color-bg-primary: #0d0d0d;
-    --color-bg-secondary: #141414;
-    --color-bg-tertiary: #1a1a1a;
-    --color-text-primary: #ededed;
-    --color-text-secondary: #a1a1a1;
-    --color-text-tertiary: #737373;
-    --color-border: #262626;
+    --color-surface: #0d0d0d;
+    --color-surface-secondary: #141414;
+    --color-surface-tertiary: #1a1a1a;
+    --color-content: #ededed;
+    --color-content-secondary: #a1a1a1;
+    --color-content-tertiary: #737373;
+    --color-border-subtle: #262626;
     --color-border-hover: #404040;
     --color-accent: #fafaf9;
     --color-accent-hover: #d4d1cb;
@@ -55,14 +56,13 @@
 }
 
 body {
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background: var(--color-surface);
+  color: var(--color-content);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus ring — visible, not jarring */
 *:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;

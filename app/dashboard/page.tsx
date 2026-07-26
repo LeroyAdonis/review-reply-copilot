@@ -49,8 +49,8 @@ export default async function DashboardPage() {
     <div>
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-text-primary">Dashboard</h1>
-        <p className="text-sm text-text-secondary mt-1">
+        <h1 className="text-2xl font-semibold text-content">Dashboard</h1>
+        <p className="text-sm text-content-secondary mt-1">
           {userBusinesses.length}{" "}
           {userBusinesses.length === 1 ? "business" : "businesses"} connected
         </p>
@@ -63,18 +63,18 @@ export default async function DashboardPage() {
             {/* Business header card */}
             <Link
               href={`/dashboard/business/${business.id}`}
-              className="block bg-bg-secondary border border-border hover:border-border-hover rounded-xl px-6 py-5 transition-all hover:shadow-sm"
+              className="block bg-surface-secondary border border-border-subtle hover:border-border-hover rounded-xl px-6 py-5 transition-all hover:shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-bg-tertiary flex items-center justify-center text-text-primary font-semibold text-sm">
+                  <div className="w-10 h-10 rounded-lg bg-surface-tertiary flex items-center justify-center text-content font-semibold text-sm">
                     {business.businessName.charAt(0)}
                   </div>
                   <div>
-                    <h2 className="font-semibold text-text-primary">
+                    <h2 className="font-semibold text-content">
                       {business.businessName}
                     </h2>
-                    <p className="text-sm text-text-secondary capitalize">
+                    <p className="text-sm text-content-secondary capitalize">
                       {business.businessType} ·{" "}
                       {business.tone.replace(/_/g, " ")}
                     </p>
@@ -136,19 +136,19 @@ function StatCard({
   warn?: boolean;
 }) {
   return (
-    <div className="bg-bg-tertiary rounded-lg px-3 py-2.5 text-center">
-      <p className="text-xs text-text-tertiary uppercase tracking-wide mb-0.5">
+    <div className="bg-surface-tertiary rounded-lg px-3 py-2.5 text-center">
+      <p className="text-xs text-content-tertiary uppercase tracking-wide mb-0.5">
         {label}
       </p>
       <p
         className={`text-lg font-bold ${
-          warn ? "text-warning" : "text-text-primary"
+          warn ? "text-warning" : "text-content"
         }`}
       >
         {value}
       </p>
       {sub && (
-        <p className="text-xs text-text-secondary mt-0.5">{sub}</p>
+        <p className="text-xs text-content-secondary mt-0.5">{sub}</p>
       )}
     </div>
   );
@@ -158,9 +158,9 @@ function EmptyState() {
   return (
     <div className="max-w-md py-16">
       {/* Icon */}
-      <div className="w-16 h-16 rounded-2xl bg-bg-tertiary flex items-center justify-center mb-6">
+      <div className="w-16 h-16 rounded-2xl bg-surface-tertiary flex items-center justify-center mb-6">
         <svg
-          className="w-8 h-8 text-text-secondary"
+          className="w-8 h-8 text-content-secondary"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -174,10 +174,10 @@ function EmptyState() {
         </svg>
       </div>
 
-      <h1 className="text-2xl font-semibold text-text-primary mb-3">
+      <h1 className="text-2xl font-semibold text-content mb-3">
         Connect your Google Business Profile
       </h1>
-      <p className="text-sm text-text-secondary leading-relaxed mb-8 max-w-sm">
+      <p className="text-sm text-content-secondary leading-relaxed mb-8 max-w-sm">
         Link your business to start auto-replying to reviews in your own voice.
         Positive reviews get answered automatically. Negative ones come to your
         inbox for a quick approval.
@@ -194,7 +194,7 @@ function EmptyState() {
         </Link>
 
         <div className="pt-4 border-t border-border">
-          <p className="text-xs text-text-tertiary mb-2">
+          <p className="text-xs text-content-tertiary mb-2">
             Don&apos;t have a Business Profile yet? Test with mock data.
           </p>
           <MockSeedButton />

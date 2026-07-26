@@ -38,7 +38,7 @@ export default function SignInPage() {
             <h1 className="text-2xl font-semibold leading-tight mb-2">
               Review Reply Copilot
             </h1>
-            <p className="text-base text-text-secondary leading-relaxed">
+            <p className="text-base text-content-secondary leading-relaxed">
               Auto-reply to Google reviews in your own SA voice.
             </p>
           </div>
@@ -58,13 +58,13 @@ export default function SignInPage() {
             </button>
           </form>
 
-          <p className="mt-6 text-sm text-text-secondary text-center leading-relaxed">
+          <p className="mt-6 text-sm text-content-secondary text-center leading-relaxed">
             By continuing, you agree to our{" "}
-            <a href="#" className="underline underline-offset-2 hover:text-text-primary transition-colors">
+            <a href="#" className="underline underline-offset-2 hover:text-content transition-colors">
               Terms
             </a>{" "}
             and{" "}
-            <a href="#" className="underline underline-offset-2 hover:text-text-primary transition-colors">
+            <a href="#" className="underline underline-offset-2 hover:text-content transition-colors">
               Privacy Policy
             </a>
             .

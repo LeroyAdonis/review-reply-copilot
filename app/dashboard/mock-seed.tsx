@@ -13,7 +13,7 @@ export function MockSeedButton() {
   return (
     <button
       onClick={seed}
-      className="text-sm text-text-tertiary hover:text-text-secondary transition-colors underline underline-offset-2"
+      className="text-sm text-content-tertiary hover:text-content-secondary transition-colors underline underline-offset-2"
     >
       Use mock data for testing
     </button>
