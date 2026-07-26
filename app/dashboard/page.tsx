@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { businesses } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
+import { MockSeedButton } from "./mock-seed";
 
 export default async function DashboardPage() {
   const session = await auth();
@@ -82,6 +83,13 @@ function EmptyState() {
         Connect Google Business Profile
         <span className="opacity-60">→</span>
       </Link>
+
+      <div className="mt-6 pt-6 border-t border-border">
+        <p className="text-xs text-text-tertiary mb-2">
+          Don&apos;t have a Business Profile yet? Test with mock data.
+        </p>
+        <MockSeedButton />
+      </div>
     </div>
   );
 }
