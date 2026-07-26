@@ -1,20 +1,29 @@
 import { auth } from "@/lib/auth";
 import Link from "next/link";
 
-export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default async function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const session = await auth();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-        <Link href="/dashboard" className="font-bold text-lg">
+    <div className="min-h-screen bg-bg-primary">
+      <header className="bg-bg-secondary border-b border-border px-6 py-4 flex items-center justify-between">
+        <Link
+          href="/dashboard"
+          className="text-base font-semibold text-text-primary"
+        >
           Review Reply Copilot
         </Link>
         <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-600">{session?.user?.email}</span>
+          <span className="text-sm text-text-secondary">
+            {session?.user?.email}
+          </span>
           <Link
             href="/api/auth/signout"
-            className="text-sm text-gray-500 hover:text-gray-700"
+            className="text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             Sign out
           </Link>
