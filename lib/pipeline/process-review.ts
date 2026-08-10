@@ -1,4 +1,4 @@
-import { reviews, responses, users } from "@/lib/db/schema";
+import { responses, users } from "@/lib/db/schema";
 import { db } from "@/lib/db/index";
 import { eq } from "drizzle-orm";
 import { generateResponse } from "@/lib/ai/generate-response";

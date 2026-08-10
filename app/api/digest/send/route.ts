@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { users, businesses, reviews, responses, digestLogs } from "@/lib/db/schema";
 import { db } from "@/lib/db/index";
-import { eq, and, gte, avg as avgFn } from "drizzle-orm";
+import { eq, and, gte } from "drizzle-orm";
 import { sendWeeklyDigest } from "@/lib/email/client";
 
 export async function POST(request: NextRequest) {
